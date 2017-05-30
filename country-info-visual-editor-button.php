@@ -94,14 +94,17 @@ function ci_get_country_info() {
 		return;
 	}
 
-	$country_code = $_POST['country_code'];
+	// Read and sanitize the county code from the post call
+	$country_code = sanitize_text_field( $_POST['country_code'] );
 	// Validate the country code
 	if ( ! isset( $country_code ) || strlen( $country_code ) != 2 ) {
 		ci_ajax_error_message( 'Invalid county code. 2 letter ISO code is expected.' );
 	}
 
-	//Include the countries array constant (CI_COUNTRIES_ARRAY) with valid ISO codes
+	// More validation
+	// Include the countries array constant (CI_COUNTRIES_ARRAY) with valid ISO codes
 	require 'lib/countries.php';
+	// Check if the entered country code is exists in the counties array
 	if ( ! array_key_exists( strtoupper( $country_code ), CI_COUNTRIES_ARRAY ) ) {
 		ci_ajax_error_message( 'Invalid county code!' );
 	}
@@ -134,8 +137,17 @@ function ci_get_country_info() {
 	$country_info_text .= '<br />';
 
 	$country_info_text .= '</p>';
-	echo $country_info_text;
-	wp_die(); // terminate immediately and return a proper response
-}
-add_action( 'wp_ajax_ci_get_country_info', 'ci_get_country_info' );
 
+	// Clean the HTML result before echoing
+	$safe_tags = array(
+		'br'     => array(),
+		'p'      => array(),
+		'strong' => array(),
+	);
+	echo wp_kses( $country_info_text, $safe_tags );
+
+	// Terminate immediately and return a proper response
+	wp_die();
+}
+
+add_action( 'wp_ajax_ci_get_country_info', 'ci_get_country_info' );
