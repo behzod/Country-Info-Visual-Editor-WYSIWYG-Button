@@ -94,11 +94,11 @@ function ci_get_country_info() {
 		return;
 	}
 
-	// Read and sanitize the county code from the post call
+	// Read and sanitize the country code from the post call
 	$country_code = sanitize_text_field( $_POST['country_code'] );
 	// Validate the country code
 	if ( ! isset( $country_code ) || strlen( $country_code ) != 2 ) {
-		ci_ajax_error_message( 'Invalid county code. 2 letter ISO code is expected.' );
+		ci_ajax_error_message( 'Invalid country code. 2 letter ISO code is expected.' );
 	}
 
 	// More validation
@@ -106,7 +106,7 @@ function ci_get_country_info() {
 	require 'lib/countries.php';
 	// Check if the entered country code exists in the counties array
 	if ( ! array_key_exists( strtoupper( $country_code ), CI_COUNTRIES_ARRAY ) ) {
-		ci_ajax_error_message( 'Invalid county code!' );
+		ci_ajax_error_message( 'Invalid country code!' );
 	}
 
 	// Start the building the info text
