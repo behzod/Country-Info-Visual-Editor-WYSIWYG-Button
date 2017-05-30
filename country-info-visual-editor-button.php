@@ -104,7 +104,7 @@ function ci_get_country_info() {
 	// More validation
 	// Include the countries array constant (CI_COUNTRIES_ARRAY) with valid ISO codes
 	require 'lib/countries.php';
-	// Check if the entered country code is exists in the counties array
+	// Check if the entered country code exists in the counties array
 	if ( ! array_key_exists( strtoupper( $country_code ), CI_COUNTRIES_ARRAY ) ) {
 		ci_ajax_error_message( 'Invalid county code!' );
 	}
