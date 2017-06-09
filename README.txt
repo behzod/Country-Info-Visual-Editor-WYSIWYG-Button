@@ -2,6 +2,7 @@
 Contributors: behzod
 Tags: wysiwyg, editor, geo, world bank api, countries
 Stable tag: 1.0
+Tested up to: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -9,7 +10,7 @@ Adds a visual editor button for pulling country info from The World Bank API.
 
 == Description ==
 
-Adds a visual editor button for pulling information about any country from The World Bank API (https://datahelpdesk.worldbank.org/knowledgebase/topics/125589).
+Adds a visual editor button for pulling information about any country from [The World Bank API](https://datahelpdesk.worldbank.org/knowledgebase/topics/125589).
 You will find a new "globe" button in the visual (WYSIWYG) editor after activating the plugin.
 Once the button is clicked and 2 letter ISO code of the country is entered, the plugin pulls following information from the API about the country:
 
