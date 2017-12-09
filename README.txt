@@ -1,8 +1,8 @@
 === Country Info Visual Editor (WYSIWYG) Button ===
 Contributors: behzod
 Tags: wysiwyg, editor, geo, world bank api, countries
-Stable tag: 1.0
-Tested up to: 4.8
+Stable tag: 1.0.1
+Tested up to: 4.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ The plugin's author is not affiliated with The World Bank.
 You will find a new "globe" button in the visual (WYSIWYG) editor.
 
 == Changelog ==
-
+= 1.0.1 =
+* Refactored the code
+* Turned on simple client side validation
+* Tested compatibility with WordPress 4.9
 = 1.0 =
 * Initial Release.

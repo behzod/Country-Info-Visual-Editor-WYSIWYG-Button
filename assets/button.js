@@ -10,9 +10,9 @@
 				// TODO: Create better UI for the country input
 				var country_code = prompt('Enter 2 Letter Country Code: ');
 				// Simple validation. More validation in the back-end code
-				if (country_code.length != 2) {
-					//alert('Invalid country code');
-					//return;
+				if (2 !== country_code.length) {
+					alert('Invalid country code');
+					return;
 				}
 				var data = {
 					'action'      : 'ci_get_country_info',
@@ -27,7 +27,7 @@
 			return {
 				longname: 'Country Info Visual Editor (WYSIWYG) Button',
 				author  : 'Behzod Saidov',
-				version : '1.0'
+				version : '1.0.1'
 			};
 		}
 	});
